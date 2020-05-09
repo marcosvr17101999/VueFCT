@@ -31,7 +31,7 @@ a{
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  background-color: #B3FF78;
+  background-colr: #B3FF78;
   justify-content: center;
 }
 
