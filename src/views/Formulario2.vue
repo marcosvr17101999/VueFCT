@@ -35,28 +35,28 @@
           <table id="tablatop">
             <tr>
               <td id="td" class="xc">
-                CENTRO DOCENTE: I.E.S AZARQUIEL CÓDIGO: 45003875
+                CENTRO DOCENTE: {{centros[0].nombre}} CÓDIGO: 45003875
                 <br />
-                <br />ALUMNO: CESAR PATIÑO RODRIGUEZ
+                <br />ALUMNO: {{usuarios[0].nombre}} {{usuarios[0].apellidos}}
                 <br />
                 <br />PROFESOR – TUTOR: SEBASTIÁN RUBIO VALERO
               </td>
               <td id="td">
-                CENTRO DE TRABAJO: TOLEDO SOFTWARE DISTRIBUCIÓN
+                CENTRO DE TRABAJO: {{empresa[0].nombre}}
                 <br />
-                <br />RESPONSABLE DE LA F.C.T.: VLAD VIRGIL CORNEANUN
+                <br />RESPONSABLE DE LA F.C.T.: {{empresa[0].tutores[0].nombreTutor}}
                 <br />
-                <br />ÁREA O DPTO. DEL CENTRO DE TRABAJO:
+                <br />ÁREA O DPTO. DEL CENTRO DE TRABAJO: 
               </td>
               <td id="td" class="anex"><br><br>ANEXO III</td>
             </tr>
             <tr>
-              <td id="td">FAMILIA PROFESIONAL: INFORMÁTICA</td>
+              <td id="td">FAMILIA PROFESIONAL:{{centros[0].ciclos[0].familiaProfesional}}</td>
               <td id="td" colspan="2">PERIODO:</td>
             </tr>
             <tr>
-              <td id="td">CICLO FORMATIVO, PCPI U OTRAS ENSEÑ.:DESARROLLO DE APLICACIONES WEB</td>
-              <td id="td" colspan="2">HORAS:</td>
+              <td id="td">CICLO FORMATIVO, PCPI U OTRAS ENSEÑ.:{{centros[0].ciclos[0].denominacion}}</td>
+              <td id="td" colspan="2">HORAS:{{centros[0].ciclos[0].horaPracticas}}</td>
             </tr>
           </table>
         </div>
@@ -131,12 +131,17 @@
 </template>
 
 <script>
+
+import { mapState } from 'vuex'
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 export default {
   name: "Formulario2",
   props: {
     msg: String
+  },
+  computed: {
+    ...mapState(['usuarios','centros','ma','empresa']),
   },
   methods: {
     downloadWithCSS() {

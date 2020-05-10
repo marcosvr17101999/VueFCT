@@ -55,6 +55,7 @@ export default new Vuex.Store({
       email:'emailatos',
       nifRepresentante:'nifRepresentanteatos',
       tutores:[{
+        nombreTutor:'nombreTutor',
         niftutor:'niftutor1'
       }],
 
