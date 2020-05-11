@@ -151,7 +151,7 @@ export default {
 
         var width = pdf.internal.pageSize.getWidth() / 1.1;
         var height = pdf.internal.pageSize.getHeight() / 1.1;
-
+pdf.addImage(imgData, "jpeg", 7, 10, width, height);
         pdf.addImage(imgData, "jpeg", 7, 10, width, height);
         pdf.save("download.pdf");
       });
