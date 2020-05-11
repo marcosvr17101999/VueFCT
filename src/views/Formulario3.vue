@@ -288,26 +288,18 @@ export default {
        const pdf = new jsPDF();
       html2canvas(document.getElementById("canvas")).then(canvas => {
         const imgData = canvas.toDataURL("image/png", 0.5);
-       
-
         const imgProps = pdf.getImageProperties(imgData);
         const pdfWidth = pdf.internal.pageSize.getWidth() / 1.2;
         const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width / 1;
-        
         pdf.addImage(imgData, "PNG", 20, 20, pdfWidth, pdfHeight);
         pdf.addPage();
-      
       });
       html2canvas(document.getElementById("canvas2")).then(canvas => {
         const imgData = canvas.toDataURL("image/png", 0.5);
-       
-
         const imgProps = pdf.getImageProperties(imgData);
         const pdfWidth = pdf.internal.pageSize.getWidth() / 1.2;
         const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width / 1;
-        
         pdf.addImage(imgData, "PNG", 20, 20, pdfWidth, pdfHeight);
-     
       pdf.save("download.pdf");
       });
     },
