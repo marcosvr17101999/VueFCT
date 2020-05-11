@@ -1,8 +1,9 @@
 <template>
   <div class="FFinalP">
-     <router-link to="/Formulario3">Fase Final Practicas</router-link> |
+     <router-link to="/Formulario3">Anexo I</router-link> |
+     <a href="">Anexo II</a> <br>
+    <a href="">Anexo III</a>
   
-   <h1>This is an about page  333333333333333333333333333333333333333</h1>
   </div>
 </template>
 
