@@ -1,10 +1,10 @@
 <template>
-  <div class="formulario3 row pb-3 mb-3">
+  <div class="formulario3 row pb-3 mb-3 justify-content-center">
     <div class="col-12 row justify-content-center">
       <button class="btn col-2" @click="downloadWithCSS">Descarga</button>
     </div>
 
-    <div class="canvas1 row col-12">
+    <div class="canvas1 row col-8">
       <div id="canvas" ref="content" class="pt-5">
         <div class="iconos row">
           <div class="iconoCastilla col-2">
@@ -236,6 +236,27 @@
         </div>
       </div>
     </div>
+    <div class="canvas1 row col-8">
+      <div id="canvas2" ref="content" class="pt-5 row">
+     
+         <div class="iconos row">
+          <div class="iconoCastilla col-2">
+            <img src="../assets/logjunta.jpg" class="img-fluid" />
+          </div>
+          <div class="titulo col-8">
+            <b>
+              <u>
+                CONSEJERIA DE EDUCACIÓN, CULTURA Y DEPORTES
+                <br />DIRECCIÓN GENERAL DE ORGANIZACIÓN,CALIDAD EDUCATICA Y FORMACIÓN PROFESIONAL
+              </u>
+            </b>
+          </div>
+          <div class="iconoEU col-2">
+            <img src="../assets/eu.png" class="img-fluid" />
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -249,15 +270,30 @@ export default {
   },
   methods: {
     downloadWithCSS() {
+       const pdf = new jsPDF();
       html2canvas(document.getElementById("canvas")).then(canvas => {
         const imgData = canvas.toDataURL("image/png", 0.5);
-        const pdf = new jsPDF();
+       
 
         const imgProps = pdf.getImageProperties(imgData);
         const pdfWidth = pdf.internal.pageSize.getWidth() / 1.2;
         const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width / 1;
+        
         pdf.addImage(imgData, "PNG", 20, 20, pdfWidth, pdfHeight);
-        pdf.save("download.pdf");
+        pdf.addPage();
+      
+      });
+      html2canvas(document.getElementById("canvas2")).then(canvas => {
+        const imgData = canvas.toDataURL("image/png", 0.5);
+       
+
+        const imgProps = pdf.getImageProperties(imgData);
+        const pdfWidth = pdf.internal.pageSize.getWidth() / 1.2;
+        const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width / 1;
+        
+        pdf.addImage(imgData, "PNG", 20, 20, pdfWidth, pdfHeight);
+     
+      pdf.save("download.pdf");
       });
     },
     download() {
@@ -270,7 +306,6 @@ export default {
   }
 };
 </script>
-
 <style>
 .tm {
   height: 22px;
@@ -286,6 +321,12 @@ export default {
   color: black;
   border: 1px solid black;
   justify-content: center;
+}
+#canvas2 {
+   padding-right: 15px;
+  padding: 10px;
+  height: 842px;
+  width: 595px;
 }
 #canvas {
   padding-right: 15px;
