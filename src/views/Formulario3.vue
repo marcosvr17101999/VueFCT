@@ -237,9 +237,9 @@
       </div>
     </div>
     <div class="canvas1 row col-8">
-      <div id="canvas2" ref="content" class="pt-5 row">
+      <div id="canvas2" ref="content" class="pt-5">
      
-         <div class="iconos row">
+         <div class="iconos row ">
           <div class="iconoCastilla col-2">
             <img src="../assets/logjunta.jpg" class="img-fluid" />
           </div>
@@ -253,6 +253,21 @@
           </div>
           <div class="iconoEU col-2">
             <img src="../assets/eu.png" class="img-fluid" />
+          </div>
+        </div>
+        <div class="textoPlano pt-4 ">
+          Según lo indicado en el punto 1 de la Instrucción 8 de la<b> Circular de la Dirección General de Formación Profesional por la que se dictan instrucciones a los centros educativos sostenidos con fondos públicos que impartan enseñanzas de Formación Profesional, Ciclos Formativos de Artes Plásticas y Diseño y Enseñanzas Deportivas, sobre la puesta en marcha y desarrollo de los módulos profesionales de Formación en centros de trabajo para todas las enseñanzas y Proyecto para los Ciclos Formativos de grado superior:</b>
+          <br><br>
+Semestralmente, cada profesor-tutor del módulo profesional de F.C.T., elevará un informe al Director del centro educativo, que a su vez deberá elaborar un informe-general que será presentado al Consejo Escolar o Consejo Social sobre el desarrollo del módulo profesional de F.C.T. en los Ciclos Formativos y las relaciones con las empresas y deberá cumplimentar las correspondientes fichas estadísticas de seguimiento e Inserción Laboral (Anexo IX) así como cualquier otra documentación que para la gestión del módulo profesional de F.C.T., soliciten las Delegaciones Provinciales de la Consejería de Educación, Cultura y Deportes. Los centros remitirán semestralmente copia del informe-general y Anexo IX referidos, a la Delegación Provincial correspondiente.
+
+        </div>
+        <div class="col-12 fecha pt-3">
+          En ___<u>TOLEDO</u>___ a _<u>17</u>_ de ___<u>DICIEMBRE</u>___ de <u>2020</u>
+        </div>
+        <div class="col-12 row justify-content-center pt-4">
+          <div class="col-4 firma border">
+            EL/LA DIRECTORA/A DEL CENTRO EDUCATIVO<br><br><br><br><br><br><br>
+            Fdo.:Nombre Apellido Apellido
           </div>
         </div>
       </div>
@@ -307,6 +322,18 @@ export default {
 };
 </script>
 <style>
+.firma{
+  height: 150px;
+  font-size: 10px;
+}
+.fecha{
+  text-align: right;
+  font-size: 10px;
+}
+.textoPlano{
+  text-align: left;
+  font-size: 9px;
+}
 .tm {
   height: 22px;
 }
